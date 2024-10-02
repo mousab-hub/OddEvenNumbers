@@ -11,8 +11,8 @@ namespace OddEvenNumbersApp
             int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
             PrintNumbers("Numbers : ", numbers);
-            PrintNumbers("Even Numbers  ", numbers.Where(n => IsEven(n)));
-            PrintNumbers("Odd Numbers  ", numbers.Where(n => IsOdd(n)));
+            PrintNumbers("Even Numbers ", numbers.Where(n => IsEven(n)));
+            PrintNumbers("Odd Numbers ", numbers.Where(n => IsOdd(n)));
 
 
             Console.ReadLine();
@@ -31,28 +31,10 @@ namespace OddEvenNumbersApp
             Console.WriteLine();
         }
 
-        static bool IsEven(int number)
-        {
-            if(number%2==0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+        static bool IsEven(int number) => number % 2 == 0;
 
-        static bool IsOdd(int number)
-        {
-            if (number % 2 != 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+
+        static bool IsOdd(int number) => !IsEven(number);
+       
     }
 }
